@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header><a href="index.html"><p>Seterra Ripoff</p></a>
+    <span>
+        <a href="upload.html"><input type=button value="Upload"></a>
+        <a href="browse.html"><input type=button value="Browse"></a>
+        <a href="support.html"><input type=button value="Support Me"></a></span>
+</header>
+<hr>
+<main>
+    <section id="left"><p class="ad">Here will be an ad</p></section>
+    <section id="center">
+        <h2>Search For Maps</h2>
+        <label class="hidden" for="nameSearch"></label><input type="text" id="nameSearch" placeholder="Type here name of map" onchange="downloadNewestMaps(this.value)">
+        <div id="sideMaps">
+
+        </div>
+    </section>
+    <section id="right">
+        <p class="ad">Here will be an ad</p>
+    </section>
+</main>
+</body>
+</html>
+<script src="connectToServer.js"></script>
+<script src="converter.js"></script>
+<script src="game.js"></script>

@@ -1,0 +1,218 @@
+body{
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+header{
+    --header-margin: 40px;
+    margin: auto var(--header-margin);
+    max-height: 7vh;
+    width: calc(100vw - var(--header-margin) * 2);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+header > span{
+    padding-left: 5%;
+    display: flex;
+    width: 40%;
+    justify-content: space-between;
+}
+header p{
+    font-size: 3rem;
+    font-weight: bold;
+    font-family: "Comic Sans MS", serif;
+}
+header input[type=button]{
+    font-size: 2rem;
+    height: 50px;
+    width: 200px;
+    border-radius: 15px;
+}
+header input[type=button]:hover{
+    cursor: pointer;
+    background-color: black;
+    color: white;
+}
+hr{
+    margin-bottom: 0;
+}
+#hero{
+    padding: 20px;
+}
+h1{
+    font-size: 3rem;
+    text-align: center;
+}
+#hero > span{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+#hero input[type=button]{
+    width: 400px;
+    height: 100px;
+    font-size: 2rem;
+    border-radius: 15px;
+}
+#hero input[type=button]:hover{
+    cursor: pointer;
+    background-color: black;
+    color: white;
+}
+main{
+    display: flex;
+    justify-content: space-between;
+    width: 100vw;
+}
+.ad{
+    font-size: 4rem;
+    text-align: center;
+    margin-top: 300px;
+}
+#center{
+    height: calc(100vh - 7vh);
+    width: 40%;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    text-align: center;
+}
+#gameMapDiv{
+    max-width: 100%;
+}
+#nameInput{
+    margin: 20px 0;
+    width: 90%;
+    height: 40px;
+    font-size: 1.5rem;
+}
+#gameMapLabel{
+    display: none;
+    margin: 30px auto auto;
+    width: 90%;
+    justify-content: space-around;
+    border: 1px solid black;
+}
+#gameMapLabel > *{
+    width: 25%;
+}
+#sideMaps{
+    overflow-y: auto;
+}
+#nameSearch{
+    margin: 10px auto;
+    height: 30px;
+    font-size: 1.5rem;
+}
+svg{
+    width: 90% !important;
+    border: 1px solid black;
+    height: auto;
+}
+h2{
+    font-size: 3rem;
+    margin: 20px 0 0;
+}
+p{
+    margin: 0;
+}
+textarea{
+    width: 90%;
+    height: 60vh;
+    resize: none;
+}
+#center input[type=button]{
+    width: 200px;
+    height: 50px;
+    margin: 10px 60px;
+    border-radius: 15px;
+}
+#center input[type=button]:hover{
+    cursor: pointer;
+    background-color: black;
+    color: white;
+}
+#congratsMessage{
+    text-align: center;
+    width: 100%;
+    display: none;
+}
+#congratsMessage a{
+    color: blue;
+    text-decoration: underline;
+}
+#congratsMessage a:hover{
+    color: blueviolet;
+    cursor: pointer;
+}
+#left, #right{
+    width: 30%;
+}
+h3{
+    font-size: 2.5rem;
+    margin: 10px;
+    text-align: center;
+    font-weight: normal;
+    font-family: "Comic Sans MS", serif;
+}
+h4{
+    font-size: 2rem;
+    margin: 10px;
+}
+a:link{
+    color: initial;
+    text-decoration: none;
+}
+a:visited{
+    color: initial;
+    text-decoration: none;
+}
+.sideMap{
+    text-align: center;
+    width: 70%;
+    margin: auto;
+}
+.hidden{
+    display: none;
+}
+.unused{
+    fill: white !important;
+}
+.unused *{
+    fill: white !important;
+}
+.notGuessed{
+    fill: green !important;
+}
+.notGuessed *{
+    fill: green !important;
+}
+.notGuessed:hover{
+    fill: lightgreen !important;
+}
+.notGuessed:hover *{
+    fill: lightgreen !important;
+}
+.correct{
+    fill: lightgrey !important;
+}
+.correct *{
+    fill: lightgrey !important;
+}
+.wrong{
+    fill: yellow !important;
+}
+.wrong *{
+    fill: yellow !important;
+}
+.veryWrong{
+    fill: orange !important;
+}
+.veryWrong *{
+    fill: orange !important;
+}
+.extremelyWrong{
+    fill: red !important;
+}
+.extremelyWrong *{
+    fill: red !important;
+}

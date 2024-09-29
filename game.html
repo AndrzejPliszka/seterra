@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body onload=downloadMap()>
+<header><a href="index.html"><p>Seterra Ripoff</p></a>
+    <span>
+        <a href="upload.html"><input type=button value="Upload"></a>
+        <a href="browse.html"><input type=button value="Browse"></a>
+        <a href="support.html"><input type=button value="Support Me"></a></span>
+</header>
+<hr>
+<main>
+    <section id="left">Here will be an ad</section>
+    <section id="center">
+        <h2 id="name">Map Loading Please Wait</h2>
+        <label for="svgCode" class="hidden"></label><textarea id="svgCode" class="hidden" placeholder="Paste your SVG map here. If you don't know how, see documentation!"></textarea>
+        <div id="gameMapLabel"><p id="countriesLeft">1/14</p><p id="accuracy">0%</p><p id="timer">10:10</p><p id="currentCountryToGuess">sigma</p></div>
+        <div id="gameMapDiv"></div>
+        <p id="congratsMessage">Congrats! Replay game, upload it to servers or <a onclick="downloadSvgMap()">download this map</a></p>
+        <span>
+            <input type="button" value="Retry" onclick="makeSVGImage()">
+        </span>
+    </section>
+    <section id="right">
+        <h3>Newest Maps!</h3>
+        <div id="sideMaps">
+
+        </div>
+    </section>
+</main>
+</body>
+</html>
+<script src="connectToServer.js"></script>
+<script src="converter.js"></script>
+<script src="game.js"></script>

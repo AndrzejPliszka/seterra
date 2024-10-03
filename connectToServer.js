@@ -72,8 +72,8 @@ function downloadMap(){
 }
 window.addEventListener("load", downloadNewestMaps.bind(null, null))
 function downloadNewestMaps(searchedString){
-    if(document?.getElementById("nameSearch").value && !searchedString){
-        searchedString = document?.getElementById("nameSearch")?.value;
+    if(document?.getElementById("nameSearch")?.value && !searchedString){
+        searchedString = document.getElementById("nameSearch").value;
     }
     let url
     if(searchedString){

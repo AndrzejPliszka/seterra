@@ -1,4 +1,5 @@
 let sentMap = false;
+let page = 1;
 function sendMapToServer() {
     if(sentMap) {return}
     let url = "https://heathered-cherry-replace.glitch.me/send_map"
@@ -71,13 +72,17 @@ function downloadMap(){
 }
 window.addEventListener("load", downloadNewestMaps.bind(null, null))
 function downloadNewestMaps(searchedString){
-    console.log(searchedString)
+    if(document?.getElementById("nameSearch").value && !searchedString){
+        searchedString = document?.getElementById("nameSearch")?.value;
+    }
     let url
     if(searchedString){
-        url = `https://heathered-cherry-replace.glitch.me/send_newest_maps?search=${searchedString}`;
+        page = 1;
+        document.getElementById("pageText").innerHTML = `Page ${page}`;
+        url = `https://heathered-cherry-replace.glitch.me/send_newest_maps?search=${searchedString}&page=${page}`;
     }
     else{
-        url = `https://heathered-cherry-replace.glitch.me/send_newest_maps`;
+        url = `https://heathered-cherry-replace.glitch.me/send_newest_maps?page=${page}`;
     }
 
     const options = {
@@ -95,14 +100,14 @@ function downloadNewestMaps(searchedString){
         })
         .then(data => {
             console.log('Downloaded newest maps:', data);
-            DisplayMapsOnSide(data);
+            displayMapsOnSide(data);
         })
         .catch(error => {
             document.getElementById("gameMapDiv").innerHTML = "<p style='color:red;'>There was an error, try again and (if that doesn't work) contact website admin</p>";
             console.error('Error:', error);
         });
 }
-function DisplayMapsOnSide(listOfMaps){
+function displayMapsOnSide(listOfMaps){
     console.log(listOfMaps);
     let sideMapDiv = document.getElementById("sideMaps");
     sideMapDiv.innerHTML = "";
@@ -114,4 +119,12 @@ function DisplayMapsOnSide(listOfMaps){
         </div></a>
         `;
     }
+}
+function changePage(amountToChange){
+    page += amountToChange;
+    if(page < 1){
+        page = 1;
+    }
+    document.getElementById("pageText").innerHTML = `Page ${page}`;
+    downloadNewestMaps();
 }

@@ -108,6 +108,20 @@ svg{
     border: 1px solid black;
     height: auto;
 }
+.elementLabel{
+    pointer-events: none;
+    position: absolute;
+    width: auto;
+    height: auto;
+    background-color: white;
+    border-radius: 10%;
+    opacity: 1;
+    transition: opacity 0.5s ease;
+}
+
+.fade-out {
+    opacity: 0;
+}
 h2{
     font-size: 3rem;
     margin: 20px 0 0;

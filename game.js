@@ -38,6 +38,7 @@ function checkIfCountryIsCorrect(clickedElement){
             document.getElementById("congratsMessage").style.display = "block";
         }
     } else{
+        createLabel(clickedElement);
         if(errors === 2){
             flashWrongCountry()
         }
@@ -75,11 +76,30 @@ function flashWrongCountry(){
     }, 500);
 }
 
+function createLabel(parentElement){
+    const elementLabel = document.createElement('div');
+    elementLabel.classList.add('elementLabel');
+
+    elementLabel.style.left = `${parentElement.getBoundingClientRect().left + parentElement.getBoundingClientRect().width/2}px`;
+    console.log(parentElement.getBoundingClientRect().left, parentElement.getBoundingClientRect().top);
+    elementLabel.style.top = `${parentElement.getBoundingClientRect().top + parentElement.getBoundingClientRect().height/2}px`;
+    elementLabel.innerHTML = parentElement.id.replaceAll("_", " ");
+    document.body.appendChild(elementLabel);
+
+    // Po pewnym czasie, element zniknie
+    setTimeout(() => {
+        elementLabel.classList.add('fade-out');
+
+        setTimeout(() => {
+            elementLabel.remove();
+        }, 500);
+    }, 500);
+}
 function makeNewCountryToGuess(){
     console.log(allObjectIdentification)
     const randomIndex = Math.floor(Math.random() * allObjectIdentification.length);
     currentCountry = allObjectIdentification[randomIndex];
-    document.getElementById("currentCountryToGuess").innerHTML = currentCountry;
+    document.getElementById("currentCountryToGuess").innerHTML = currentCountry.replaceAll("_", " ");
 }
 
 function updateGameLabel(){

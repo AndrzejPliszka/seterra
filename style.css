@@ -99,6 +99,7 @@ main{
     margin-top: 300px;
 }
 #center{
+    overflow-y: auto;
     height: calc(100vh - 7vh);
     width: 50%;
     border-left: 1px solid black;

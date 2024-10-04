@@ -30,13 +30,15 @@ function checkIfCountryIsCorrect(clickedElement){
         clearInterval(intervalId);
         errors = 0;
         allObjectIdentification.splice(allObjectIdentification.indexOf(clickedElement.id), 1);
-        makeNewCountryToGuess();
         if(allObjectIdentification.length === 0){
             gameEnded = true;
             clearInterval(timerInterval);
             document.getElementById("currentCountryToGuess").innerHTML = "You won!!!";
             document.getElementById("congratsMessage").style.display = "block";
+        } else{
+            makeNewCountryToGuess();
         }
+
     } else{
         createLabel(clickedElement);
         if(errors === 2){

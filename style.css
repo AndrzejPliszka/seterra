@@ -1,15 +1,29 @@
+*{
+    --background-color: rgb(12, 33, 81);
+    --secondary-color: white;
+    --logo-color: rgb(221, 182, 17);
+    --special-color: rgb(189, 57, 56);
+    --sea-color: rgb(164, 209, 220);
+}
 body{
+    padding: 0;
+    margin: 0;
     overflow-x: hidden;
     overflow-y: hidden;
 }
 header{
-    --header-margin: 40px;
-    margin: auto var(--header-margin);
+    background-color: var(--background-color);
+    color: var(--secondary-color);
+    padding: 10px 40px;
     max-height: 7vh;
-    width: calc(100vw - var(--header-margin) * 2);
+    width: calc(100vw - 80px);
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+em{
+    color: var(--logo-color);
+    font-style: normal;
 }
 header > span{
     padding-left: 5%;
@@ -18,25 +32,38 @@ header > span{
     justify-content: space-between;
 }
 header p{
+    color: var(--logo-color);
     font-size: 3rem;
     font-weight: bold;
     font-family: "Comic Sans MS", serif;
 }
 header input[type=button]{
+    background-color: var(--special-color);
+    border: none;
     font-size: 2rem;
     height: 50px;
     width: 200px;
-    border-radius: 15px;
+    border-radius: 30px;
+    color: var(--secondary-color);
 }
 header input[type=button]:hover{
     cursor: pointer;
     background-color: black;
     color: white;
 }
+header hr{
+    background-color: var(--background-color);
+    border: none;
+    padding: 5px 0;
+    border-bottom: 2px solid var(--secondary-color);
+}
 hr{
-    margin-bottom: 0;
+    margin: 0;
 }
 #hero{
+    background-color: var(--background-color);
+    color: var(--secondary-color);
+    height: 100vh;
     padding: 20px;
 }
 h1{
@@ -49,6 +76,9 @@ h1{
     align-items: center;
 }
 #hero input[type=button]{
+    background-color: var(--special-color);
+    color: var(--secondary-color);
+    border: none;
     width: 400px;
     height: 100px;
     font-size: 2rem;
@@ -56,8 +86,7 @@ h1{
 }
 #hero input[type=button]:hover{
     cursor: pointer;
-    background-color: black;
-    color: white;
+    color: var(--background-color);
 }
 main{
     display: flex;
@@ -71,7 +100,7 @@ main{
 }
 #center{
     height: calc(100vh - 7vh);
-    width: 40%;
+    width: 50%;
     border-left: 1px solid black;
     border-right: 1px solid black;
     text-align: center;
@@ -94,11 +123,16 @@ main{
     border: 1px solid black;
 }
 #gameMapLabel > *{
+    border-right: 1px solid black;
     margin: auto;
     width: 10%;
 }
 #gameMapLabel > *:last-of-type{
     width: 70%;
+    border: none;
+}
+#sideMaps hr:first-of-type{
+    display: none;
 }
 #sideMaps{
     overflow-y: auto;
@@ -109,6 +143,7 @@ main{
     font-size: 1.5rem;
 }
 svg{
+    background-color: var(--sea-color);
     width: 90% !important;
     border: 1px solid black;
     height: auto;
@@ -164,7 +199,7 @@ textarea{
     cursor: pointer;
 }
 #left, #right{
-    width: 30%;
+    width: 25%;
 }
 #sideMaps{
     height: 75%;
